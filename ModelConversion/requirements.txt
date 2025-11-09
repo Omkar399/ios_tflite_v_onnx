@@ -1,0 +1,18 @@
+# Python requirements for model conversion
+# Note: These versions are tested and working on macOS ARM (Apple Silicon)
+
+# Deep learning frameworks
+tensorflow>=2.13.0
+torch==2.1.0  # Pinned: 2.9.0 has ONNX export crashes on macOS ARM
+torchvision==0.16.0  # Compatible with torch 2.1.0
+
+# ONNX ecosystem
+onnx>=1.14.0
+onnxruntime>=1.15.0
+onnxsim>=0.4.33
+onnxscript>=0.1.0  # Required for PyTorch ONNX export
+onnxconverter-common>=1.13.0  # For FP16 conversion
+
+# Utilities
+numpy<2.0  # Pinned: torch 2.1.0 requires numpy 1.x
+Pillow>=10.0.0
